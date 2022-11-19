@@ -23,7 +23,7 @@
 </CENTER>
 <P>
 
-Some dynamic content created using various JSP mechanisms:
+Some dynamic content for testing
 <UL>
   <LI><B>Expression.</B><BR>
       Your hostname: <%= request.getRemoteHost() %>.
