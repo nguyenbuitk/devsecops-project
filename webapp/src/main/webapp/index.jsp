@@ -1,49 +1,43 @@
-<%@ page contentType="text/html; charset=UTF-8" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core
-"
-         prefix="c" %>
-<%@ taglib uri="/functions" prefix="f" %>
-<html>
-<head><title>Localized Dates</title></head>
-<body bgcolor="white">
-<jsp:useBean id="locales" scope="application"
-    class="mypkg.MyLocales"/>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>Using JavaServer Pages</TITLE>
 
-<form name="localeForm" action="index.jsp" method="post">
-<c:set var="selectedLocaleString" value="${param.locale}" />
-<c:set var="selectedFlag"
-     value="${!empty selectedLocaleString}" />
-<b>Locale:</b>
-<select name=locale>
-<c:forEach var="localeString" items="${locales.localeNames}" >
-<c:choose>
-    <c:when test="${selectedFlag}">
-        <c:choose>
-            <c:when
-                 test="${f:equals(selectedLocaleString, localeString)}" >
-                <option selected>${localeString}</option>
-            </c:when>
-            <c:otherwise>
-                <option>${localeString}</option>
-            </c:otherwise>
-        </c:choose>
-    </c:when>
-    <c:otherwise>
-        <option>${localeString}</option>
-    </c:otherwise>
-</c:choose>
-</c:forEach>
-</select>
-<input type="submit" name="Submit" value="Get Date">
-</form>
+<META NAME="author" CONTENT="Marty Hall -- hall@apl.jhu.edu">
+<META NAME="keywords"
+      CONTENT="JSP,JavaServer Pages,servlets">
+<META NAME="description"
+      CONTENT="A quick example of the four main JSP tags.">
+<LINK REL=STYLESHEET
+      HREF="My-Style-Sheet.css"
+      TYPE="text/css">
+</HEAD>
 
-<c:if test="${selectedFlag}" >
-    <jsp:setProperty name="locales"
-        property="selectedLocaleString"
-        value="${selectedLocaleString}" />
-    <jsp:useBean id="date" class="mypkg.MyDate"/>
-    <jsp:setProperty name="date" property="locale"
-        value="${locales.selectedLocale}"/>
-    <b>Date: </b>${date.date}</c:if>
-</body>
-</html>
+<BODY BGCOLOR="#FDF5E6" TEXT="#000000" LINK="#0000EE"
+      VLINK="#551A8B" ALINK="#FF0000">
+
+<CENTER>
+<TABLE BORDER=5 BGCOLOR="#EF8429">
+  <TR><TH CLASS="TITLE">
+      Using JavaServer Pages</TABLE>
+</CENTER>
+<P>
+
+Some dynamic content created using various JSP mechanisms:
+<UL>
+  <LI><B>Expression.</B><BR>
+      Your hostname: <%= request.getRemoteHost() %>.
+  <LI><B>Scriptlet.</B><BR>
+      <% out.println("Attached GET data: " +
+                     request.getQueryString()); %>
+  <LI><B>Declaration (plus expression).</B><BR>
+      <%! private int accessCount = 0; %>
+      Accesses to page since server reboot: <%= ++accessCount %>
+  <LI><B>Directive (plus expression).</B><BR>
+      <%@ page import = "java.util.*" %>
+      Current date: <%= new Date() %>
+</UL>
+
+
+</BODY>
+</HTML>
