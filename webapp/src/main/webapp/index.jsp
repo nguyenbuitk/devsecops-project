@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <HTML>
 <HEAD>
-<TITLE>Using JavaServer Pages</TITLE>
+<TITLE>Just simple JavaServer pages for CI/CD testing</TITLE>
 
 <META NAME="author" CONTENT="Marty Hall -- hall@apl.jhu.edu">
 <META NAME="keywords"
