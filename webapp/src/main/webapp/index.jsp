@@ -24,6 +24,7 @@
 <P>
 
 Some dynamic content for testing
+Deployment is happening
 <UL>
   <LI><B>Expression.</B><BR>
       Your hostname: <%= request.getRemoteHost() %>.
