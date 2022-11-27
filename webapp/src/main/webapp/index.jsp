@@ -33,9 +33,6 @@ Testing summary project <BR>
 <UL>
   <LI><B>Expression.</B><BR>
       Your hostname: <%= request.getRemoteHost() %>.
-  <LI><B>Scriptlet.</B><BR>
-      <% out.println("Attached GET data: " +
-                     request.getQueryString()); %>
   <LI><B>Declaration (plus expression).</B><BR>
       <%! private int accessCount = 0; %>
       Accesses to page since server reboot: <%= ++accessCount %>
