@@ -25,11 +25,7 @@
 
 Some dynamic content for testing <BR>
 Test tomcat container <BR>
-Test project 4 part 2 <BR>
-Second test project 4 part 2 <BR>
-Third test project 4 part 3 <BR>
-Testing project 5 <BR>
-Testing summary project <BR>
+Second project <BR>
 <UL>
   <LI><B>Expression.</B><BR>
       Your hostname: <%= request.getRemoteHost() %>.
